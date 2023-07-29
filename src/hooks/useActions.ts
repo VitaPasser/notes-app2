@@ -4,12 +4,12 @@ import { useMemo } from 'react'
 
 import { actions } from '../redux/notes/notes.slice'
 
-import { useAppDispatch } from '../redux/hooks'
+import { useTypedDispatch } from './useTypedDispatch'
 
 const rootActions: ActionCreatorsMapObject<any> = { ...actions }
 
 export const useActions = () => {
-  const dispatch = useAppDispatch()
+  const dispatch = useTypedDispatch()
 
   return useMemo(() => bindActionCreators(rootActions, dispatch), [dispatch])
 }

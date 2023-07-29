@@ -1,8 +1,8 @@
-import { useAppSelector } from '../../redux/hooks'
+import { useTypedSelector } from '../../hooks/useTypedSelector'
 import Table from '../table/Table'
 
 export default function Notes() {
-  const { notes } = useAppSelector((state) => state)
+  const { notes } = useTypedSelector((state) => state)
 
   return (
     <>
