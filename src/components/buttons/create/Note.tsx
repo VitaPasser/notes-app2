@@ -14,7 +14,7 @@ const note: INote = {
   id: 0,
 }
 
-export default function NoteCreateButton() {
+export default function CreateNoteButton() {
   const { addNote } = useActions()
 
   return (

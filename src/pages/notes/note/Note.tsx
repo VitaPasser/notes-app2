@@ -1,5 +1,8 @@
 import type { INote } from '../../../../@types/note.interface'
 
+import NoteArchiveButton from './archive/NoteArchiveButton'
+import NoteDeleteButton from './delete/NoteDeleteButton'
+import NoteEditButton from './edit/NoteEditButton'
 import styles from './Note.module.css'
 
 interface Prop {
@@ -16,12 +19,9 @@ export default function Note({ note }: Prop) {
       {note.date.map((date, i) => (
         <div key={i}>{date}</div>
       ))}
-      {/* <button
-        onClick={() => dispatch(actions.addNote(note))}
-        className={styles.button}
-      >
-        Create
-      </button> */}
+      <NoteEditButton />
+      <NoteArchiveButton note={note} />
+      <NoteDeleteButton note={note} />
     </div>
   )
 }
