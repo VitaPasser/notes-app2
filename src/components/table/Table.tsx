@@ -1,16 +1,22 @@
+import type { ReactNode } from 'react'
+
 import styles from './Table.module.css'
 
 interface Prop {
   elements: Array<any>
-  children: CallableFunction
+  header: ReactNode
+  children(element: any, key: number): ReactNode
 }
 
-export default function Table({ elements, children }: Prop) {
+export default function Table({ elements, header, children }: Prop) {
   return (
-    <div className={styles.item}>
-      {elements.map((element, i) => (
-        <div key={i}>{children(element)}</div>
-      ))}
-    </div>
+    <table className={styles.item}>
+      <thead>{header}</thead>
+      <tbody>
+        {elements.map((element, key) => {
+          return children(element, key)
+        })}
+      </tbody>
+    </table>
   )
 }

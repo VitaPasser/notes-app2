@@ -1,5 +1,5 @@
 import Header from './layout/Header'
-import Index from './pages/Index'
+import Index from './pages/index/Index'
 
 export default function App() {
   return (
