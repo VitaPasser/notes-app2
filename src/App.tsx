@@ -1,11 +1,12 @@
-import Header from './layout/Header'
+import Layout from './layout/Layout'
 import Index from './pages/index/Index'
 
 export default function App() {
   return (
     <div className="App">
-      <Header />
-      <Index />
+      <Layout>
+        <Index />
+      </Layout>
     </div>
   )
 }

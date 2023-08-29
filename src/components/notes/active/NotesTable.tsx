@@ -6,7 +6,7 @@ import NotesHeader from '../NotesHeader'
 
 export default function Notes() {
   const { notes } = useTypedSelector((state) => state)
-  const activeNotes = notes.filter((note) => !note.archived)
+  const activeNotes = notes.data.filter((note) => !note.archived)
   return (
     <>
       <Table elements={activeNotes} header={NotesHeader()}>

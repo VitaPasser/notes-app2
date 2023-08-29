@@ -10,7 +10,9 @@ export default function CountedTable() {
   return (
     <>
       <Table elements={categories} header={CountedHeader()}>
-        {(category: ICategory) => <Counter notes={notes} category={category} />}
+        {(category: ICategory, key: number) => (
+          <Counter key={key} notes={notes.data} category={category} />
+        )}
       </Table>
     </>
   )
